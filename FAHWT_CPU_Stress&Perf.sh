@@ -3,7 +3,7 @@
 sudo apt-get -y install stress-ng sysbench
 
 
-mkdir "QuickTestLogs_$(date '+%Y-%m-%d_%H:%M:%S')" && cd "$_" || exit;
+mkdir "TestLogs_$(date '+%Y-%m-%d_%H:%M:%S')" && cd "$_" || exit;
 
 stress-ng --cpu 0 --cpu-method all -t 600s --metrics --timestamp --log-file "CPU_StressResults.yaml";
 # shellcheck disable=SC2129
@@ -41,4 +41,3 @@ cat "Mem_PerfLog.yaml" | grep -E 'Number of threads|---|operation|transferred|99
 
 # shellcheck disable=SC2046
 cat *Results.yaml >> "$HOSTNAME"_$(date '+%Y-%m-%d_%H:%M:%S').yaml;
-exit
