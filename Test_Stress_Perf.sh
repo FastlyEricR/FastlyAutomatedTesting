@@ -1,7 +1,6 @@
 #!/bin/bash
 
-sudo apt-get -y install stress-ng sysbench
-
+sudo apt-get -y install stress-ng sysbench;
 
 mkdir "TestLogs_$(date '+%Y-%m-%d_%H:%M:%S')" && cd "$_" || exit;
 
